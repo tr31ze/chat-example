@@ -1,0 +1,51 @@
+{
+  "name": "chat-app",
+  "version": "0.0.1",
+  "description": "Chat based on React node.js express.js and socket.io",
+  "homepage": "",
+  "author": {
+    "name": "Borislav Bankov",
+    "email": "borislav.bankov@mentormate.com",
+    "url": ""
+  },
+  "contributors": [],
+  "files": [
+    "server",
+    "client",
+    "test"
+  ],
+  "main": "lib/server/index.js",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.mentormate.bg/borislav.bankov/chat-app.git"
+  },
+  "engines": {
+    "node": ">= 4 <= 8",
+    "npm": ">= 3 <= 5"
+  },
+  "scripts": {
+    "prestart": "clap build",
+    "start": "if test \"$NODE_ENV\" = \"production\"; then npm run prod; else clap dev; fi",
+    "test": "clap check",
+    "coverage": "clap check",
+    "prod": "echo 'Starting standalone server in PROD mode'; NODE_ENV=production node ./lib/server/",
+    "heroku-postbuild": "clap build"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "electrode-archetype-react-app": "^3.0.0",
+    "electrode-confippet": "^1.0.0",
+    "electrode-react-webapp": "^1.1.0",
+    "electrode-redux-router-engine": "^1.2.2",
+    "express": "^4.14.0",
+    "lodash": "^4.10.1",
+    "moment": "^2.18.1",
+    "seamless-immutable": "^7.1.2",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {
+    "electrode-archetype-react-app-dev": "^3.0.0"
+  },
+  "private": true
+}
